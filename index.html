@@ -9,17 +9,28 @@
 		<h1>Vue3</h1>
 		<div id="app">
 			{{ message }}
+			<hr>
+			<button onclick="doAction()">Stop</button>
 		</div>
 		<script>
+			let timer = null
+
+			function doAction() {
+				clearInterval(timer)
+			}
+			
 			const appdata = {
 				data() {
 					return{
-						message: "Hello, Vue!",
-						count: 0
+						message: ''
 					}
 				},
+				created() {
+					this.message = 'Hello Vue!'
+					this.count = 0
+				},
 				mounted() {
-					setInterval(() => {
+					timer = setInterval(() => {
 						this.count++
 						this.message = 'count: ' + this.count
 					}, 1000)
