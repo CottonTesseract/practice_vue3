@@ -11,10 +11,14 @@
 	<body>
 		<h1 class="bg-secondary text-white display-4 px-3">Vue3</h1>
 		<div id="app" class="container">
-			<div class="card m-4 p-4">
-				<h2 class="card-title">Contents</h2>
-				<p title="card-text">{{ message }}</p>
-			</div>
+			<form>
+				<div class="form-group">
+					<label for="id">ID</label>
+					<input type="text" class="form-control" id="id" placeholder="input ID">
+					<p class="form-text">Please input your ID.</p> 
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
 		</div>
 		<script>
 			const appdata = {
