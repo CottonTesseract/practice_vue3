@@ -11,14 +11,10 @@
 	<body>
 		<h1 class="bg-secondary text-white display-4 px-3">Vue3</h1>
 		<div id="app" class="container">
-			<p class="alert alert-primary">{{ message }}</p>
-			<p class="alert alert-secondary">{{ message }}</p>
-			<p class="alert alert-success">{{ message }}</p>
-			<p class="alert alert-danger">{{ message }}</p>
-			<p class="alert alert-warning">{{ message }}</p>
-			<p class="alert alert-dark">{{ message }}</p>
-			<p class="alert alert-light">{{ message }}</p>
-			<p class="alert alert-info">{{ message }}</p>
+			<div class="card m-4 p-4">
+				<h2 class="card-title">Contents</h2>
+				<p title="card-text">{{ message }}</p>
+			</div>
 		</div>
 		<script>
 			const appdata = {
