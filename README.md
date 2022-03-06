@@ -2,4 +2,4 @@
 
 Space to practice Vue.js3
 
-https://cottontesseract.github.io/practice_vue3/
+https://ctes091x.github.io/practice_vue3/
