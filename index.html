@@ -26,24 +26,27 @@
 	<body>
 		<h1 class="bg-secondary text-white display-4 px-3">Vue3</h1>
 		<div id="app" class="container">
-			<p v-bind:class="{type1:isType1, type2:isType2}">
+			<p v-bind:class="classes">
 				{{ message }}
 			</p>
 		</div>
 		<script>
+			var classObj ={
+				type1: true,
+				type2: false
+			}
+			
 			const appdata = {
 				data() {
 					return{
-						message: null,
-						isType1: true,
-						isType2: false
+						message: 'Hello, Vue.js!',
+						classes: classObj
 					}
 				},
 				mounted(){
-					this.message = 'Hello, Vue.js!'
 					setInterval(() => {
-						this.isType1 = !this.isType1
-						this.isType2 = !this.isType2
+						this.classes.type1 = !classObj.type1
+						this.classes.type2 = !classObj.type2
 					}, 1000);
 				}
 			}
