@@ -7,22 +7,44 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<script src="https://unpkg.com/vue@next"></script>
+		<style>
+			.type1 {
+				font-size: 32pt;
+				font-weight: normal;
+				font-style: normal;
+				color: red;
+
+			}
+			.type2 {
+				font-size: 24pt;
+				font-weight:bold;
+				font-style: italic;
+				color: blue;
+			}
+		</style>
 	</head>
 	<body>
 		<h1 class="bg-secondary text-white display-4 px-3">Vue3</h1>
 		<div id="app" class="container">
-			<p v-bind:style="style">{{ message }}</p>
+			<p v-bind:class="{type1:isType1, type2:isType2}">
+				{{ message }}
+			</p>
 		</div>
 		<script>
 			const appdata = {
 				data() {
 					return{
 						message: null,
-						style: 'font-size:32pt; color:red;'
+						isType1: true,
+						isType2: false
 					}
 				},
 				mounted(){
 					this.message = 'Hello, Vue.js!'
+					setInterval(() => {
+						this.isType1 = !this.isType1
+						this.isType2 = !this.isType2
+					}, 1000);
 				}
 			}
 
