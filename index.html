@@ -11,21 +11,18 @@
 	<body>
 		<h1 class="bg-secondary text-white display-4 px-3">Vue3</h1>
 		<div id="app" class="container">
-			<form>
-				<div class="form-group">
-					<label for="id">ID</label>
-					<input type="text" class="form-control" id="id" placeholder="input ID">
-					<p class="form-text">Please input your ID.</p> 
-				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</form>
+			<p v-bind:style="style">{{ message }}</p>
 		</div>
 		<script>
 			const appdata = {
 				data() {
 					return{
-						message: 'Hello, Vue.js!'
+						message: null,
+						style: 'font-size:32pt; color:red;'
 					}
+				},
+				mounted(){
+					this.message = 'Hello, Vue.js!'
 				}
 			}
 
