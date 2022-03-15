@@ -7,47 +7,20 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<script src="https://unpkg.com/vue@next"></script>
-		<style>
-			.type1 {
-				font-size: 32pt;
-				font-weight: normal;
-				font-style: normal;
-				color: red;
-
-			}
-			.type2 {
-				font-size: 24pt;
-				font-weight:bold;
-				font-style: italic;
-				color: blue;
-			}
-		</style>
 	</head>
 	<body>
 		<h1 class="bg-secondary text-white display-4 px-3">Vue3</h1>
 		<div id="app" class="container">
-			<p v-bind:class="classes">
+			<p v-bind:style="{fontSize:'20pt',color:'red',border:'2px solid cyan'}">
 				{{ message }}
 			</p>
 		</div>
 		<script>
-			var classObj ={
-				type1: true,
-				type2: false
-			}
-			
 			const appdata = {
 				data() {
 					return{
-						message: 'Hello, Vue.js!',
-						classes: classObj
+						message: 'Hello, Vue.js!'
 					}
-				},
-				mounted(){
-					setInterval(() => {
-						this.classes.type1 = !classObj.type1
-						this.classes.type2 = !classObj.type2
-					}, 1000);
 				}
 			}
 
